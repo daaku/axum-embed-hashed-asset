@@ -1,0 +1,10 @@
+[package]
+name = "axum-embed-hashed-asset"
+version = "0.1.0"
+edition = "2021"
+authors = ["Naitik Shah <n@daaku.org>"]
+
+[dependencies]
+axum = "0.6"
+base64 = "0.21"
+rust-embed = { version = "8.0", features = ["mime-guess"] }
