@@ -3,6 +3,12 @@ name = "axum-embed-hashed-asset"
 version = "0.1.0"
 edition = "2021"
 authors = ["Naitik Shah <n@daaku.org>"]
+description = "A library to serve assets with hashed URLs."
+readme = "readme.md"
+repository = "https://github.com/daaku/axum-embed-hashed-asset"
+keywords = ["axum", "rust-embed", "asset", "static"]
+categories = []
+license = "MIT"
 
 [dependencies]
 axum = "0.6"
