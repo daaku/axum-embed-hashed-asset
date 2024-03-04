@@ -12,5 +12,5 @@ license = "MIT"
 
 [dependencies]
 axum = "0.6"
-base64 = "0.21"
+base64 = "0.22"
 rust-embed = { version = "8.0", features = ["mime-guess"] }
