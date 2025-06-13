@@ -1,4 +1,4 @@
-use axum::body::Full;
+use axum::body::Body;
 use axum::extract::Path;
 use axum::http::{header, StatusCode};
 use axum::response::{IntoResponse, Response};
@@ -38,11 +38,28 @@ pub async fn handle<Asset: rust_embed::RustEmbed>(
     Ok(Response::builder()
         .header(header::CONTENT_TYPE, file.metadata.mimetype())
         .header(header::CACHE_CONTROL, "public,max-age=31536000,immutable")
-        .body(Full::from(file.data))
+        .body(Body::from(file.data))
         .map_err(|_| {
             (
                 StatusCode::INTERNAL_SERVER_ERROR,
                 "failed to build response",
             )
         }))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use axum::routing::get;
+    use axum::Router;
+    use rust_embed::RustEmbed;
+
+    #[derive(RustEmbed)]
+    #[folder = "src/"]
+    struct Asset;
+
+    #[test]
+    fn test_is_valid_handler() {
+        let _ = Router::<()>::new().route("/", get(handle::<Asset>));
+    }
 }

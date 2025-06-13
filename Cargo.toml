@@ -1,6 +1,6 @@
 [package]
 name = "axum-embed-hashed-asset"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Naitik Shah <n@daaku.org>"]
 description = "A library to serve assets with hashed URLs."
@@ -11,6 +11,6 @@ categories = []
 license = "MIT"
 
 [dependencies]
-axum = "0.6"
+axum = "0.8"
 base64 = "0.22"
-rust-embed = { version = "8.0", features = ["mime-guess"] }
+rust-embed = { version = "8.7", features = ["mime-guess"] }
