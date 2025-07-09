@@ -1,7 +1,7 @@
 [package]
 name = "axum-embed-hashed-asset"
 version = "0.2.0"
-edition = "2021"
+edition = "2024"
 authors = ["Naitik Shah <n@daaku.org>"]
 description = "A library to serve assets with hashed URLs."
 readme = "readme.md"
